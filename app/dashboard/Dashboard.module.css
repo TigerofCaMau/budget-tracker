@@ -1,0 +1,228 @@
+/* =========== Layout ========== */
+
+.container {
+    max-width: 85rem;
+    margin: 0 auto;
+    padding: 1.5rem;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+}
+
+/* Flex header row */
+
+.headerRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ========== Buttons ========== */
+
+.logoutBtn,
+.submitBtn,
+.cancelBtn,
+.actionBtn {
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.logoutBtn {
+    padding: 0.6rem 1rem;
+    background: #e53e3e;
+    color: #fff;
+}
+
+.logoutBtn:hover {
+    background: #c53030;
+    transform: scale(0.98)
+}
+
+/* ========== Typography ========== */
+
+.sectionTitle {
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.totalText {
+    margin-top: 1.2rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+/* ========== Inputs ========== */
+
+.searchInput,
+.input {
+    padding: 0.6rem 0.8rem;
+    width: 100%;
+    border-radius: 0.5rem;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+.searchInput {
+    max-width: 26rem;
+    margin-top: 1rem;
+}
+
+.searchInput:focus,
+.input:focus {
+    outline: none;
+    border-color: #3182ce;
+}
+
+/* ========== Chart ========== */
+
+.chartWrapper {
+    max-width: 38rem;
+    margin-top: 1.5rem;
+}
+
+/* ========== Month blocks ========== */
+
+.monthBlock {
+    margin-top: 1.8rem;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 0.6rem;
+}
+
+.monthHeader {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+/* ========== Categories ========== */
+
+.categoryHeader {
+    margin-top: 1rem;
+    font-weight: 600;
+}
+
+/* ========== Expense cards ========== */
+
+.expenseCard {
+    border: 1px solid #ccc;
+    border-radius: 0.6rem;
+    padding: 0.8rem;
+    margin-top: 0.6rem;
+}
+
+/* Buttons inside card */
+
+.actionBtn {
+    margin-top: 0.5rem;
+    padding: 0.4rem 0.7rem;
+    font-size: 0.9rem;
+}
+
+.deleteBtn {
+    background: #e53e3e;
+    color: #fff;
+}
+
+.deleteBtn:hover {
+    background-color: #c53030;
+}
+
+.editBtn {
+    margin-left: 0.5rem;
+    background: #3182ce;
+    color: #fff;
+}
+
+.editBtn:hover {
+    background: #2563eb;
+}
+
+/* ========== Form ========== */
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-top: 1.2rem;
+}
+
+.submitBtn {
+    align-self: flex-start;
+    padding: 0.7rem 1rem;
+    background: #3182ce;
+    color: #fff;
+}
+
+.submitBtn:hover {
+    background: #2563eb;
+}
+
+.submitBtn:disabled {
+    background: #a0aec0;
+    cursor: not-allowed;
+}
+
+.cancelBtn {
+    padding: 0.7rem 1rem;
+    background: #718096;
+    color: #fff;
+}
+
+/* ========== Responsive ========== */
+
+/* Tablets */
+@media (max-width: 48rem) {
+    .container{
+        max-width: 100%;
+        padding: 1.2rem;
+    }
+
+    .chartWrapper {
+        max-width: 100%;
+    }
+
+    .monthBlock {
+        padding: 0.8rem;
+    }
+}
+
+/* Mobile */
+@media (max-width: 32rem) {
+    .headerRow {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+    }
+
+    .logoutBtn {
+        width: 100%;
+    }
+
+    .monthHeader {
+        font-size: 1rem;
+    }
+
+    .expenseCard {
+        padding: 0.7rem;
+    }
+
+    .submitBtn {
+        width: 100%;
+    }
+
+    .actionBtn {
+        width: 100%;
+        margin-top: 0.4rem;
+    }
+
+    .editBtn {
+        margin-left: 0;
+    }
+
+    .searchInput {
+        max-width: 100%;
+    }
+}
