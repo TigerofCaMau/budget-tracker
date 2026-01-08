@@ -594,7 +594,15 @@ export default function DashboardPage() {
                                         disabled={isSubmitting}
                                         onClick={() => {
                                           setEditingExpenseId(null);
-                                          reset();
+                                          reset({
+                                            title: "",
+                                            amount: 0,
+                                            category: "",
+                                            date: new Date()
+                                              .toISOString()
+                                              .split("T")[0],
+                                            notes: "",
+                                          });
                                         }}
                                         className={`${styles.actionBtn} ${styles.cancelBtn}`}
                                       >
@@ -630,7 +638,10 @@ export default function DashboardPage() {
                                         type="button"
                                         onClick={() => {
                                           setEditingExpenseId(exp.id);
-                                          reset(exp);
+                                          reset({
+                                            ...exp,
+                                            notes: exp.notes ?? "", // If notes is null or undefined, use an empty string
+                                          });
                                         }}
                                         className={`${styles.actionBtn} ${styles.editBtn}`}
                                       >
