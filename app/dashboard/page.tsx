@@ -46,7 +46,7 @@ type ExpenseFormValues = {
 
 const centerTextPlugin = {
   id: "centerText",
-  afterDraw: (chart) => {
+  afterDraw: (chart: any) => {
     const {
       ctx,
       chartArea: { top, bottom, left, right, width, height },
@@ -54,7 +54,10 @@ const centerTextPlugin = {
     ctx.save();
 
     // Calculate the total from the data
-    const total = chart.data.datasets[0].data.reduce((a, b) => a + b, 0);
+    const total = chart.data.datasets[0].data.reduce(
+      (a: number, b: number) => a + b,
+      0
+    );
     const formattedTotal = `$${total.toLocaleString()}`;
 
     ctx.font = "bold 2rem sans-serif";
